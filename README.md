@@ -6,12 +6,12 @@ Made to simulate button presses that were later tested on the FPGA with real inp
 
 ## Files
 
-elevator_pkg.sv — floor count and state definitions
-RTL/controller.sv — FSM (IDLE, UP, DOWN, OPEN)
-RTL/request_resolver.sv — tracks pending floors
-RTL/elevator_ctrl.sv — top wrapper
-RTL/ssd.sv — 7-seg decoder
-Testbench/elevator_ctrl_tb.sv — 9 test cases
+- elevator_pkg.sv — floor count and state definitions
+- RTL/controller.sv — FSM (IDLE, UP, DOWN, OPEN)
+- RTL/request_resolver.sv — tracks pending floors
+- RTL/elevator_ctrl.sv — top wrapper
+- RTL/ssd.sv — 7-seg decoder
+- Testbench/elevator_ctrl_tb.sv — 9 test cases
 
 ## How to simulate
 
