@@ -3,3 +3,7 @@ transcript
 *.wlf
 *.vstf
 *.log
+*.vcd
+*.mpf
+modelsim.ini
+vsim.dump

@@ -1,8 +1,20 @@
 # Elevator-FSM-FPGA
 
-10-floor elevator FSM controller written in SystemVerilog for FPGA implementation.
+10-floor elevator controller written in SystemVerilog for FPGA.
 
-- 4 states: IDLE, UP, DOWN, OPEN
-- 3 modules: controller (core FSM), request_resolver (pending-request tracking + closest-floor logic), elevator_ctrl (top wrapper)
-- ssd.sv — 7-seg decoder for physical floor display on FPGA (not used in simulation)
-- Comprehensive testbench with 9 test cases
+Made to simulate button presses that were later tested on the FPGA with real inputs.
+
+## Files
+
+elevator_pkg.sv — floor count and state definitions
+RTL/controller.sv — FSM (IDLE, UP, DOWN, OPEN)
+RTL/request_resolver.sv — tracks pending floors
+RTL/elevator_ctrl.sv — top wrapper
+RTL/ssd.sv — 7-seg decoder
+Testbench/elevator_ctrl_tb.sv — 9 test cases
+
+## How to simulate
+
+In ModelSim/Questa, run:
+
+vsim -do run.do
