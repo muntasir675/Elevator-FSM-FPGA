@@ -21,9 +21,9 @@ logic [9:0] pending_requests;
 // Update pending requests based on button inputs
 task automatic update_requests();
     for (integer i = 0; i < 10; i++) begin
-        if (E_buttons[i])       pending_requests[i] = 1;
-        if (i < 9 && up_buttons[i])  pending_requests[i] = 1;
-        if (i > 0 && down_buttons[i-1]) pending_requests[i] = 1;
+        if (E_buttons[i])            pending_requests[i] <= 1;
+        if (i < 9 && up_buttons[i])  pending_requests[i] <= 1;
+        if (i > 0 && down_buttons[i-1]) pending_requests[i] <= 1;
     end
 endtask
 
@@ -48,6 +48,7 @@ endfunction
 always_ff @(posedge clk or posedge reset) begin
     if (reset) begin
         pending_requests <= '0;
+        direction <= 1;
         request <= NONE;
     end else begin
         update_requests();
